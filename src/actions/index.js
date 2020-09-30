@@ -22,7 +22,7 @@ export const makeApiCall = () => {
       .then(
         (jsonifiedResponse) => {
           dispatch(getWeatherSuccess(jsonifiedResponse));
-          console.log(jsonifiedResponse);
+          console.log(jsonifiedResponse.coord.lon);
         })
       .catch((error) => {
         dispatch(getWeatherFailure(error));
