@@ -17,11 +17,12 @@ export const getWeatherFailure = (error) => ({
 export const makeApiCall = () => {
   return dispatch => {
     dispatch(requestWeather);
-    return fetch('https://api.openweathermap.org/data/2.5/weather?q=seattle&appid=') 
+    return fetch('https://api.openweathermap.org/data/2.5/weather?q=seattle&appid=e0757ff5ddff229c6b09c2b18d2c5583') 
       .then(response => response.json())
       .then(
         (jsonifiedResponse) => {
-          dispatch(getWeatherSuccess(jsonifiedResponse.results));
+          dispatch(getWeatherSuccess(jsonifiedResponse));
+          console.log(jsonifiedResponse);
         })
       .catch((error) => {
         dispatch(getWeatherFailure(error));

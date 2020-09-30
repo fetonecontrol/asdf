@@ -15,19 +15,23 @@ class Main extends React.Component {
   }
 
   render() {
-    const { weatherdata } = this.props;
-    console.log( weatherdata );
-
     let close = (
       <div
-      className="close"
+      className="close"a
       onClick={() => {
         this.props.onCloseArticle()
       }}
       ></div>
       )
       
-    return (
+    const { error, isLoading, weatherdata } = this.props;
+    if (error) {
+      return <React.Fragment>Error: {error.message}</React.Fragment>;
+    } else if (isLoading) {
+      return <React.Fragment>Loading...</React.Fragment>;
+    } else {
+      return (
+      <React.Fragment>
       <div
         ref={this.props.setWrapperRef}
         id="main"
@@ -180,6 +184,7 @@ class Main extends React.Component {
           {close}
         </article>
       </div>
+      </React.Fragment>
     )
   }
 }
