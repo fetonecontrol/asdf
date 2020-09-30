@@ -1,5 +1,6 @@
-import PropTypes from 'prop-types'
-import React from 'react'
+import PropTypes from 'prop-types';
+import React from 'react';
+import Frog from './../images/Frog.jpg';
 
 const Header = props => (
   <header id="header" style={props.timeout ? { display: 'none' } : {}}>
@@ -9,7 +10,7 @@ const Header = props => (
     <div className="content">
       <div className="inner">
         <h1>LOCAL WEATHER</h1>
-        // WEATHER API VISUAL
+        <img src={Frog} alt="sup ho" style={{maxWidth: '500px', maxHeight: '100%'}} />
       </div>
     </div>
     <nav>
@@ -54,6 +55,7 @@ const Header = props => (
     </nav>
   </header>
 )
+
 
 Header.propTypes = {
   onOpenArticle: PropTypes.func,

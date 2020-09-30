@@ -16,7 +16,6 @@ class ApiCall extends React.Component {
 
   render() {
     const { error, isLoading, weatherdata } = this.props;
-    const longitude = weatherdata;
     console.log(weatherdata);
     if (error) {
       return <React.Fragment>Error: {error.message}</React.Fragment>;
@@ -26,7 +25,8 @@ class ApiCall extends React.Component {
       return (
         <React.Fragment>
           <h1>Weather-Data</h1>
-          {longitude}
+          {/* {weatherdata[0]} */}
+          
           
         </React.Fragment>
       );

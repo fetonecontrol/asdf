@@ -3,6 +3,8 @@ import React from 'react'
 import pic01 from '../images/pic01.jpg'
 import pic02 from '../images/pic02.jpg'
 import pic03 from '../images/pic03.jpg'
+import Frog from '../images/Frog.jpg'
+// import frog from 'https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fnews.nationalgeographic.com%2Fcontent%2Fdam%2Fnews%2Fphotos%2F000%2F842%2F84214.ngsversion.1422286683017.adapt.1900.1.jpg&f=1&nofb=1'
 // import { connect } from 'react-redux';
 // import { makeApiCall } from './../actions';
 import ApiCall from './ApiCall'
@@ -38,8 +40,10 @@ class Main extends React.Component {
             >
               <h2 className="major">Intro</h2>
               <span className="image main">
-                <img src={pic01} alt="" />
+              {/* <a href="" /> */}
+                <img src={Frog} alt="frog pic" />
               </span>
+              
               <p>
                 <ApiCall />
                 Aenean ornare velit lacus, ac varius enim ullamcorper eu. Proin

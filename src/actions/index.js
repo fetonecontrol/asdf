@@ -29,5 +29,4 @@ export const makeApiCall = () => {
         console.log("boo, no good")
       });
   }
-  
 }
