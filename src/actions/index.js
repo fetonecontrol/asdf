@@ -1,4 +1,5 @@
 import * as c from './ActionTypes';
+import { Map, GoogleApiWrapper, InfoWindow, Marker } from 'google-maps-react'
 
 export const requestWeather = () => ({
   type: c.REQUEST_WEATHERDATA
@@ -17,7 +18,7 @@ export const getWeatherFailure = (error) => ({
 export const makeApiCall = () => {
   return dispatch => {
     dispatch(requestWeather);
-    return fetch('https://api.openweathermap.org/data/2.5/weather?q=seattle&appid=e0757ff5ddff229c6b09c2b18d2c5583') 
+    return fetch('https://maps.googleapis.com/maps/api/js?key={process.env.API_KEY}&callback=initMap') 
       .then(response => response.json())
       .then(
         (jsonifiedResponse) => {

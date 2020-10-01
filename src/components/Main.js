@@ -7,64 +7,52 @@ import Frog from '../images/Frog.jpg'
 // import frog from 'https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fnews.nationalgeographic.com%2Fcontent%2Fdam%2Fnews%2Fphotos%2F000%2F842%2F84214.ngsversion.1422286683017.adapt.1900.1.jpg&f=1&nofb=1'
 // import { connect } from 'react-redux';
 // import { makeApiCall } from './../actions';
-import ApiCall from './ApiCall'
+// import ApiCall from './ApiCall'
+
+const mapStyles = {
+  width: '50%',
+  height: '50%'
+};
+
 
 
 class Main extends React.Component {
   
-  // componentDidMount() {
-  //   const { dispatch } = this.props;
-  //   dispatch(makeApiCall());
-  // }
+    // componentDidMount() {
+    //   const { dispatch } = this.props;
+    //   dispatch(makeApiCall());
+    // }
 
-  render() {
-    let close = (
-      <div
-        className="close" 
-        onClick={() => {
-          this.props.onCloseArticle()
-        }}
-      ></div>
-    )
+    render() {
+      let close = (
+        <div
+          className="close"
+          onClick={() => {
+            this.props.onCloseArticle()
+          }}
+        ></div>
+      )
       return (
-          <div
-            ref={this.props.setWrapperRef}
-            id="main"
-            style={this.props.timeout ? { display: 'flex' } : { display: 'none' }}
+        <div
+          ref={this.props.setWrapperRef}
+          id="main"
+          style={this.props.timeout ? { display: 'flex' } : { display: 'none' }}
+        >
+          <article
+            id="intro"
+            className={`${this.props.article === 'intro' ? 'active' : ''} ${this.props.articleTimeout ? 'timeout' : ''
+              }`}
+            style={{ display: 'none' }}
           >
-            <article
-              id="intro"
-              className={`${this.props.article === 'intro' ? 'active' : ''} ${this.props.articleTimeout ? 'timeout' : ''
-                }`}
-              style={{ display: 'none' }}
-            >
-              <h2 className="major">Intro</h2>
-              <span className="image main">
+            <h1 className="major">ABOUT</h1>
+            <span className="image main">
               {/* <a href="" /> */}
-                <img src={Frog} alt="frog pic" />
-              </span>
-              
+              <img src={Frog} alt="frog pic" />
+            </span>
               <p>
-                <ApiCall />
-                Aenean ornare velit lacus, ac varius enim ullamcorper eu. Proin
-                aliquam facilisis ante interdum congue. Integer mollis, nisl amet
-                convallis, porttitor magna ullamcorper, amet egestas mauris. Ut
-                magna finibus nisi nec lacinia. Nam maximus erat id euismod egestas.
-            By the way, check out my <a href="#work">awesome work</a>.
-          </p>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis
-                dapibus rutrum facilisis. Class aptent taciti sociosqu ad litora
-                torquent per conubia nostra, per inceptos himenaeos. Etiam tristique
-                libero eu nibh porttitor fermentum. Nullam venenatis erat id
-                vehicula viverra. Nunc ultrices eros ut ultricies condimentum.
-                Mauris risus lacus, blandit sit amet venenatis non, bibendum vitae
-                dolor. Nunc lorem mauris, fringilla in aliquam at, euismod in
-                lectus. Pellentesque habitant morbi tristique senectus et netus et
-                malesuada fames ac turpis egestas. In non lorem sit amet elit
-                placerat maximus. Pellentesque aliquam maximus risus, vel sed
-                vehicula.
-          </p>
+                This was a two day project to explore bootstrapping a React application with Gatsby. It was also an opportunity to explore SASS. Funderstanding with SASS, CSS3, HTML5, ES6 JavaScript, and the Google Maps API.
+              </p>
+                
               {close}
             </article>
 
@@ -74,25 +62,14 @@ class Main extends React.Component {
                 }`}
               style={{ display: 'none' }}
             >
-              <h2 className="major">Work</h2>
+              <h1 className="major">WORK</h1>
               <span className="image main">
+                
                 <img src={pic02} alt="" />
               </span>
               <p>
-                Adipiscing magna sed dolor elit. Praesent eleifend dignissim arcu,
-                at eleifend sapien imperdiet ac. Aliquam erat volutpat. Praesent
-                urna nisi, fringila lorem et vehicula lacinia quam. Integer
-                sollicitudin mauris nec lorem luctus ultrices.
-          </p>
-              <p>
-                Nullam et orci eu lorem consequat tincidunt vivamus et sagittis
-                libero. Mauris aliquet magna magna sed nunc rhoncus pharetra.
-                Pellentesque condimentum sem. In efficitur ligula tate urna.
-                Maecenas laoreet massa vel lacinia pellentesque lorem ipsum dolor.
-                Nullam et orci eu lorem consequat tincidunt. Vivamus et sagittis
-                libero. Mauris aliquet magna magna sed nunc rhoncus amet feugiat
-                tempus.
-          </p>
+                
+              </p>
               {close}
             </article>
 
@@ -102,19 +79,19 @@ class Main extends React.Component {
                 }`}
               style={{ display: 'none' }}
             >
-              <h2 className="major">About</h2>
+              <h1 className="major">TECH</h1>
               <span className="image main">
                 <img src={pic03} alt="" />
               </span>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur et adipiscing elit. Praesent
-                eleifend dignissim arcu, at eleifend sapien imperdiet ac. Aliquam
-                erat volutpat. Praesent urna nisi, fringila lorem et vehicula
-                lacinia quam. Integer sollicitudin mauris nec lorem luctus ultrices.
-                Aliquam libero et malesuada fames ac ante ipsum primis in faucibus.
-                Cras viverra ligula sit amet ex mollis mattis lorem ipsum dolor sit
-                amet.
-          </p>
+              <ul>
+                  <li>VS Code</li>
+                  <li>Node.js</li>
+                  <li>NPM</li>
+                  <li>Gatsby.js</li>
+                  <li>React.js</li>
+                  <li>GitHub</li>
+                  <li>Netlify</li>
+                </ul>
               {close}
             </article>
 
@@ -177,13 +154,13 @@ class Main extends React.Component {
               </ul>
               {close}
             </article>
-          </div>
+        </div>
       )
     }
   }
 
   Main.propTypes = {
-    route: PropTypes.object,
+            route: PropTypes.object,
     article: PropTypes.string,
     articleTimeout: PropTypes.bool,
     onCloseArticle: PropTypes.func,
@@ -198,7 +175,7 @@ class Main extends React.Component {
   //     error: state.error
   //   }
   // }
-  
+
 
 export default Main;
 
